@@ -4,10 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { SearchComponent } from './components/search/search.component';
 
 //define routes abd map them
 const routes: Routes = [
+  { path: 'search/:keyword', component: ProductListComponent},
   { path: 'category/:id', component: ProductListComponent },
   { path: 'category', component: ProductListComponent },
   { path: 'products', component: ProductListComponent },
@@ -16,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent],
+  declarations: [AppComponent, ProductListComponent,ProductCategoryMenuComponent, SearchComponent],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
