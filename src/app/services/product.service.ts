@@ -9,7 +9,7 @@ import { ProductCategory } from '../common/product-category';
   providedIn: 'root',
 })
 export class ProductService {
- 
+
   private baseUrl = 'http://localhost:8080/api/products';
 
   private categoryUrl = 'http://localhost:8080/api/product-category';
@@ -22,6 +22,19 @@ export class ProductService {
     return this.getProducts(searchUrl);
   }
 
+  getProductListPaginate(thePage: number,
+    thePageSize: number,
+    theCategoryId: number): Observable<GetResponseProducts> {
+
+// need to build URL based on category id, page and size
+const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`
++ `&page=${thePage}&size=${thePageSize}`;
+
+return this.httpClient.get<GetResponseProducts>(searchUrl);
+}
+
+
+
   // get products id from the rest API
   getProductCategories(): Observable<ProductCategory[]> {
     return this.httpClient
@@ -29,10 +42,10 @@ export class ProductService {
       .pipe(map((response) => response._embedded.productCategory));
   }
 
-
+//Search a product by a key word
   searchProducts(theKeyword: string): Observable<Product[]> {
 
-    // need to build URL based on the keyword 
+    // need to build URL based on the keyword
     const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`;
 
     return this.getProducts(searchUrl);
@@ -41,12 +54,29 @@ export class ProductService {
   private getProducts(searchUrl: string): Observable<Product[]> {
     return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(map(response => response._embedded.products));
   }
+
+
+//Get product details
+  getProduct(theProductId: number): Observable<Product> {
+
+    // need to build URL based on product id
+    const productUrl = `${this.baseUrl}/${theProductId}`;
+
+    return this.httpClient.get<Product>(productUrl);
+  }
 }
 //interface to map the response object from the API
 interface GetResponseProducts {
   _embedded: {
     products: Product[];
   };
+//add pagination support
+  page: {
+    size: number,
+    totalElements: number,
+    totalPages: number,
+    number: number
+  }
 }
 
 interface GetResponseProductCategory {

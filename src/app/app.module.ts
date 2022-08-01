@@ -7,9 +7,18 @@ import { AppComponent } from './app.component';
 import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SearchComponent } from './components/search/search.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+
+
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+
 
 //define routes abd map them
 const routes: Routes = [
+  {path: 'products/:id', component: ProductDetailsComponent},
   { path: 'search/:keyword', component: ProductListComponent},
   { path: 'category/:id', component: ProductListComponent },
   { path: 'category', component: ProductListComponent },
@@ -19,11 +28,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent,ProductCategoryMenuComponent, SearchComponent],
+  declarations: [AppComponent, ProductListComponent,ProductCategoryMenuComponent, SearchComponent, ProductDetailsComponent],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    HttpClientModule],
+    HttpClientModule,
+    NgbModule,
+
+   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
