@@ -8,6 +8,7 @@ import { ProductCategoryMenuComponent } from './components/product-category-menu
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SearchComponent } from './components/search/search.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
 
 
 
@@ -28,7 +29,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent,ProductCategoryMenuComponent, SearchComponent, ProductDetailsComponent],
+  declarations: [AppComponent, ProductListComponent,ProductCategoryMenuComponent, SearchComponent, ProductDetailsComponent,CartStatusComponent],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
