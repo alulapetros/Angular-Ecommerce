@@ -12,12 +12,15 @@ import { CartStatusComponent } from './components/cart-status/cart-status.compon
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 
 //define routes abd map them
 const routes: Routes = [
+  {path: 'checkout', component: CheckoutComponent},
   {path: 'cart-details', component: CartDetailsComponent},
   {path: 'products/:id', component: ProductDetailsComponent},
   { path: 'search/:keyword', component: ProductListComponent},
@@ -29,12 +32,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent,ProductCategoryMenuComponent, SearchComponent, ProductDetailsComponent,CartStatusComponent, CartDetailsComponent],
+  declarations: [AppComponent, ProductListComponent,ProductCategoryMenuComponent, SearchComponent, ProductDetailsComponent,CartStatusComponent, CartDetailsComponent, CheckoutComponent],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
     NgbModule,
+    ReactiveFormsModule,
 
    ],
 
