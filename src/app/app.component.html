@@ -1,20 +1,17 @@
-
 <div class="page-wrapper">
-
   <!-- MENU SIDEBAR-->
   <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
-      <a href="#">
-        <img src="assets/images/logo.png" alt="luv2shop" class="img-responsive" width="100px">
+      <a routerLink="/products">
+        <img
+          src="assets/images/logo.png"
+          alt="Tech Book store"
+          class="img-responsive"
+        />
       </a>
     </div>
 
     <app-product-category-menu></app-product-category-menu>
-
-
-
-
-
   </aside>
   <!-- END MENU SIDEBAR-->
 
@@ -26,9 +23,6 @@
           <div class="header-wrap">
             <app-search></app-search>
             <app-cart-status></app-cart-status>
-
-           
-
           </div>
           <div class="account-wrap"></div>
         </div>
@@ -37,8 +31,7 @@
     <!-- END HEADER DESKTOP-->
 
     <!-- MAIN CONTENT-->
-   <router-outlet></router-outlet>
-
+    <router-outlet></router-outlet>
   </div>
 </div>
 
