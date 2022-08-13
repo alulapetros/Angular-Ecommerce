@@ -104,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "Angular-Ecommerce"
+  "defaultProject": "Angular-Ecommerce",
+  "cli": {
+    "analytics": "effed006-4dd0-4e58-abb2-2f1d85889048"
+  }
 }
