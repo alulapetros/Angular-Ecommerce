@@ -254,7 +254,7 @@ input.au-input.au-input-xl{
     line-height:43px;
     color:#fff;
     border-radius:30px;
-    border:1px solid #0da8e4;
+    border:1px solid #115975;
     float:left;
     margin-top:7px;
     padding-left:17px
@@ -481,7 +481,7 @@ input.au-input.au-input-xl{
     line-height:inherit
 }
 .header-mobile .navbar-mobile .navbar-mobile-list li a:hover{
-    color:#0da8e4
+    color:#115975
 }
 .header-mobile .navbar-mobile .navbar-mobile-list li a>i{
     margin-right:19px
@@ -542,7 +542,7 @@ input.au-input.au-input-xl{
 .price{
     margin:15px 0 0;
     font-weight:800;
-    color:#0da8e4
+    color:#115975
 }
 .product-box h1{
     font-size:18px;
@@ -655,7 +655,7 @@ label.date{
     top:-1px;
     width:9px;
     height:15px;
-    border:solid #0da8e4;
+    border:solid #115975;
     border-width:0 4px 4px 0;
     -webkit-border-radius:2px;
     -moz-border-radius:2px;
@@ -690,7 +690,7 @@ table.table.table-bordered{
     border:1px solid #dee2e6
 }
 table.table.table-bordered th{
-    BACKGROUND:#0da8e4;
+    BACKGROUND:#115975;
     color:#fff;
     font-size:14px;
     padding:7px
@@ -717,7 +717,7 @@ table.table.table-bordered th{
  .price{
     margin:15px 0 0;
     font-weight:800;
-    color:#0da8e4
+    color:#115975
 }
 .detail-section{
     margin-top:60px
@@ -736,8 +736,8 @@ table.table.table-bordered th{
 
  .btn-info{
     color:#fff;
-    background-color:#0da8e4!important;
-    border-color:#0da8e4!important
+    background-color:#115975!important;
+    border-color:#115975!important
 }
 a.primary-btn{
     background:#05143f;
@@ -827,7 +827,7 @@ footer ul li{
         font-size:22px;
         float:left;
         margin-top:16px;
-        color:#205b8d;
+        color:#115975;
         margin-left:15px
     }
     .header-mobile .header-mobile-bar{
@@ -973,7 +973,7 @@ footer ul li{
         font-size:22px;
         float:left;
         margin-top:16px;
-        color:#205b8d;
+        color:#115975;
         margin-left:15px
     }
     .footer-pagination{
@@ -992,11 +992,11 @@ footer ul li{
         right:10px;
         min-width:85px;
         color:#fff;
-        border:1px solid #205b8d;
+        border:1px solid #115975;
         -webkit-border-radius:3px;
         -moz-border-radius:3px;
         border-radius:0;
-        background:#205b8d
+        background:#115975
     }
     input.au-input.au-input-xl{
         border-radius:0!important;
@@ -1012,7 +1012,7 @@ footer ul li{
         font-size:18px;
         float:left;
         margin-top:16px;
-        color:#03a9f4;
+        color:#115975;
         margin-left:15px
     }
     .total span{
@@ -1025,11 +1025,11 @@ footer ul li{
         margin-left:6px
     }
     .total{
-        background:#205b8d;
+        background:#115975;
         line-height:30px;
         color:#fff;
         border-radius:30px;
-        border:1px solid #205b8d;
+        border:1px solid #115975;
         float:left;
         margin-top:9px;
         padding-left:12px
@@ -1041,3 +1041,40 @@ footer ul li{
         padding:8px 0
     }
 }
+
+a:link {
+  text-decoration: none;
+}
+
+
+
+.product-card {
+  background-color: rgba(216, 216, 216, 0.767);
+  display: flex;
+  flex-direction: column;
+  align-items:stretch;
+  text-align: center;
+  justify-content: space-between;
+  height: 250px;
+  border-radius: 15px;
+
+}
+
+.product-card:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+
+
+.purchase{
+  color: white !important;
+  background:#e4830d !important;
+}
+
+.purchase:hover{
+  opacity: 0.6
+
+
+}
+

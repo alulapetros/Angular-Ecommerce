@@ -7,7 +7,7 @@ import { Purchase } from '../common/purchase';
   providedIn: 'root'
 })
 export class CheckoutService {
-  private purchaseUrl = 'http://localhost:8080/api/checkout/purchase';
+  private purchaseUrl = 'http://springbootbackend-env.eba-9m7jffq5.us-east-1.elasticbeanstalk.com/api/checkout/purchase';
 
   constructor(private httpClient: HttpClient) { }
 

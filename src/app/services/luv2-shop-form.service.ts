@@ -6,39 +6,31 @@ import { Country } from '../common/country';
 import { State } from '../common/state';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class Luv2ShopFormService {
+  private countriesUrl =
+    'http://springbootbackend-env.eba-9m7jffq5.us-east-1.elasticbeanstalk.com/api/countries';
+  private statesUrl =
+    'http://springbootbackend-env.eba-9m7jffq5.us-east-1.elasticbeanstalk.com/api/states';
 
-  private countriesUrl = 'http://localhost:8080/api/countries';
-  private statesUrl = 'http://localhost:8080/api/states';
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
   getCountries(): Observable<Country[]> {
-
-    return this.httpClient.get<GetResponseCountries>(this.countriesUrl).pipe(
-      map(response => response._embedded.countries)
-    );
+    return this.httpClient
+      .get<GetResponseCountries>(this.countriesUrl)
+      .pipe(map((response) => response._embedded.countries));
   }
 
   getStates(theCountryCode: string): Observable<State[]> {
-
     // search url
     const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryCode}`;
 
-    return this.httpClient.get<GetResponseStates>(searchStatesUrl).pipe(
-      map(response => response._embedded.states)
-    );
+    return this.httpClient
+      .get<GetResponseStates>(searchStatesUrl)
+      .pipe(map((response) => response._embedded.states));
   }
 
-
-
-
-
-
-
   getCreditCardMonths(startMonth: number): Observable<number[]> {
-
     let data: number[] = [];
 
     // build an array for "Month" dropdown list
@@ -52,7 +44,6 @@ export class Luv2ShopFormService {
   }
 
   getCreditCardYears(): Observable<number[]> {
-
     let data: number[] = [];
 
     // build an array for "Year" downlist list
@@ -72,11 +63,11 @@ export class Luv2ShopFormService {
 interface GetResponseCountries {
   _embedded: {
     countries: Country[];
-  }
+  };
 }
 
 interface GetResponseStates {
   _embedded: {
     states: State[];
-  }
+  };
 }
